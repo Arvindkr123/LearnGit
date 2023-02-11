@@ -44,17 +44,17 @@
 // }
 
 
-// const li = document.getElementsByTagName('li');
-// console.log(li);
-// console.log(li[1]);
-// li[1].textContent= "Hello 2";
-// li[1].style.fontWeight = "bold";
-// li[1].style.backgroundColor = "yellow";
+const li = document.getElementsByTagName('li');
+console.log(li);
+console.log(li[1]);
+li[1].textContent= "Hello 2";
+li[1].style.fontWeight = "bold";
+li[1].style.backgroundColor = "yellow";
 
-// // items.style.backgroundColor = "#f4f4f4";
-// for(let i=0; i<li.length; i++){
-//     li[i].style.backgroundColor = "#f4f4f4";
-// }
+// items.style.backgroundColor = "#f4f4f4";
+for(let i=0; i<li.length; i++){
+    li[i].style.backgroundColor = "#f4f4f4";
+}
 
 // query selector
 // var header = document.querySelector('#main-header');
@@ -75,21 +75,21 @@
 // lastItem.style.color = 'coral';
 
 // // Query selector //
-const titles = document.querySelectorAll('.title');
-console.log(titles);
-titles[0].textContent = "hello";
-// titles[0].style.backgroundColor = 'red';
-// titles[0].style.fontWeight = "bold";
+// const titles = document.querySelectorAll('.title');
+// console.log(titles);
+// titles[0].textContent = "hello";
+// // titles[0].style.backgroundColor = 'red';
+// // titles[0].style.fontWeight = "bold";
 
-const odd = document.querySelectorAll('li:nth-child(odd)');
-const even = document.querySelectorAll('li:nth-child(even)');
+// const odd = document.querySelectorAll('li:nth-child(odd)');
+// const even = document.querySelectorAll('li:nth-child(even)');
 
-for(let i=0; i<odd.length; i++){
-    even[i].style.backgroundColor = 'green';
-    even[i].style.fontWeight = 'bold';
-    // even[i].style.color = 'green';
-    // even[i].style.fontWeight = 'bold';
-}
+// for(let i=0; i<odd.length; i++){
+//     even[i].style.backgroundColor = 'green';
+//     even[i].style.fontWeight = 'bold';
+//     // even[i].style.color = 'green';
+//     // even[i].style.fontWeight = 'bold';
+// }
 
 
 

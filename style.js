@@ -23,7 +23,17 @@
 //     items[i].style.backgroundColor = "#f4f4f4";
 // }
 
-var lastItem = document.querySelector('.list-group-item:nth-child(2)');
-lastItem.style.backgroundColor = 'green';
-var ThirdItem = document.querySelector('.list-group-item:nth-child(3)');
-ThirdItem.style.display = 'none';
+// var lastItem = document.querySelector('.list-group-item:nth-child(2)');
+// lastItem.style.backgroundColor = 'green';
+// var ThirdItem = document.querySelector('.list-group-item:nth-child(3)');
+// ThirdItem.style.display = 'none';
+
+const odd = document.querySelectorAll('li:nth-child(odd)');
+const even = document.querySelectorAll('li:nth-child(even)');
+
+for(let i=0; i<odd.length; i++){
+    even[i].style.backgroundColor = 'green';
+    even[i].style.fontWeight = 'bold';
+    odd[i].style.color = 'green';
+    odd[i].style.fontWeight = 'bold';
+}

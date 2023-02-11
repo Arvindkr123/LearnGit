@@ -13,3 +13,6 @@ public static void main(String[] args){
            System.out.println("hello World");
     }
 }
+String s = "hello there";
+System.out.println(s);
+[D[D[D[D[A[A[C[B[C[[C[C[[[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[

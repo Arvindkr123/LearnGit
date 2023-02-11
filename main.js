@@ -35,7 +35,7 @@
 // console.log(items);
 // console.log(items[1]);
 // items[1].textContent= "Hello 2";
-// items[1].style.fontWeight = "bold";
+// items[1].style.fontWeight = "bold";+
 // items[1].style.backgroundColor = "yellow";
 
 // // items.style.backgroundColor = "#f4f4f4";
@@ -85,9 +85,10 @@ const odd = document.querySelectorAll('li:nth-child(odd)');
 const even = document.querySelectorAll('li:nth-child(even)');
 
 for(let i=0; i<odd.length; i++){
-    odd[i].style.backgroundColor = '#f4f4f4';
-    even[i].style.color = 'green';
+    even[i].style.backgroundColor = 'green';
     even[i].style.fontWeight = 'bold';
+    // even[i].style.color = 'green';
+    // even[i].style.fontWeight = 'bold';
 }
 
 

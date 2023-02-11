@@ -11,14 +11,19 @@
 //     li[i].style.backgroundColor = "#f4f4f4";
 // }
 
-const items = document.getElementsByClassName('list-group-item');
-console.log(items);
-console.log(items[1]);
-items[1].textContent= "Hello 2";
-items[1].style.fontWeight = "bold";
-items[1].style.backgroundColor = "yellow";
+// const items = document.getElementsByClassName('list-group-item');
+// console.log(items);
+// console.log(items[1]);
+// items[1].textContent= "Hello 2";
+// items[1].style.fontWeight = "bold";
+// items[1].style.backgroundColor = "yellow";
 
-// items.style.backgroundColor = "#f4f4f4";
-for(let i=0; i<items.length; i++){
-    items[i].style.backgroundColor = "#f4f4f4";
-}
+// // items.style.backgroundColor = "#f4f4f4";
+// for(let i=0; i<items.length; i++){
+//     items[i].style.backgroundColor = "#f4f4f4";
+// }
+
+var lastItem = document.querySelector('.list-group-item:nth-child(2)');
+lastItem.style.backgroundColor = 'green';
+var ThirdItem = document.querySelector('.list-group-item:nth-child(3)');
+ThirdItem.style.display = 'none';

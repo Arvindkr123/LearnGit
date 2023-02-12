@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create the form to stroe the user details</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+    integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <script src="./style.js"></script>
+</head>
+<body>
+    <div class="container p-3 m-auto" style="border: 5px solid green;">
+        <h1>User Details </h1>
+        <div class="container m-5" >
+            <form onsubmit="saveToLocalStorage(event)" class="form-check-input">
+                <label for="name">Name</label><br>
+                <input type="text" name="name" id="name" required/><br>
+                <label for="email">Eamil</label><br>
+                <input type="email" name="email" id="email" required><br><br>
+                <label for="tel">PhoneNumber</label><br>
+                <input type="tel" name="tel" id="tel" required><br><br>
+                <button class="btn btn-outline-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

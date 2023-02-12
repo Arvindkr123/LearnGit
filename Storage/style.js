@@ -14,11 +14,21 @@ function saveToLocalStorage(e){
         phone
     }
 
-    localStorage.setItem("userDeatils",JSON.stringify(myObj));
-    console.log(localStorage);
-    let myObj_deserialized = JSON.parse(localStorage.getItem("userDeatils"));
-    console.log(myObj_deserialized);
+    localStorage.setItem(myObj.email, JSON.stringify(myObj));
+    showUserOnScreen(myObj);
 }
+
+function showUserOnScreen(obj){
+    const parentElem = document.getElementById('items');
+    // const li = document.createElement('li');
+    // li.textContent= obj.name+"-"+obj.email+"-"+obj.phone;
+    // parentElem.appendChild(li);
+
+    parentElem.innerHTML = `<li>${obj.email}--${obj.name}--${obj.phone}</li>`;
+}
+
+
+
 
 // let myObj = {
 //     name:'Arvind',

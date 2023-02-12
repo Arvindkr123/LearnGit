@@ -20,12 +20,22 @@ function saveToLocalStorage(e){
 
 function showUserOnScreen(obj){
     const parentElem = document.getElementById('items');
-    // const li = document.createElement('li');
-    // li.textContent= obj.name+"-"+obj.email+"-"+obj.phone;
-    // parentElem.appendChild(li);
+    const li = document.createElement('li');
+    li.textContent= obj.name+"-"+obj.email+"-"+obj.phone;
 
-    parentElem.innerHTML = `<li>${obj.email}--${obj.name}--${obj.phone}</li>`;
+    // parentElem.innerHTML = `<li>${obj.email}--${obj.name}--${obj.phone}</li>`;
+
+    const deleteButton = document.createElement('input');
+    deleteButton.type = 'button';
+    deleteButton.value = 'delete';
+    deleteButton.onclick=()=>{
+        localStorage.removeItem(obj.email);
+        parentElem.removeChild(li);
+    }
+    li.appendChild(deleteButton);
+    parentElem.appendChild(li);
 }
+
 
 
 

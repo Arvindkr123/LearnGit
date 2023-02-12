@@ -99,78 +99,78 @@
 //     console.log(e.target.className);
 // })
 
-var form = document.getElementById('addForm');
-var itemList = document.getElementById('items');
-var filter = document.getElementById('filter');
+// var form = document.getElementById('addForm');
+// var itemList = document.getElementById('items');
+// var filter = document.getElementById('filter');
 
-// // Form submit event
-form.addEventListener('submit', addItem);
-// Delete event
-itemList.addEventListener('click', removeItem);
-itemList.addEventListener('click',EditItem);
-// Filter event
-filter.addEventListener('keyup', filterItems);
+// // // Form submit event
+// form.addEventListener('submit', addItem);
+// // Delete event
+// itemList.addEventListener('click', removeItem);
+// itemList.addEventListener('click',EditItem);
+// // Filter event
+// filter.addEventListener('keyup', filterItems);
 
-// Add item
-function addItem(e){
-  e.preventDefault();
+// // Add item
+// function addItem(e){
+//   e.preventDefault();
 
-  // Get input value
-  var newItem = document.getElementById('item').value;
-  var description = document.getElementById('description').value;
+//   // Get input value
+//   var newItem = document.getElementById('item').value;
+//   var description = document.getElementById('description').value;
 
-  // Create new li element
-  var li = document.createElement('li');
-  // Add class
-  li.className = 'list-group-item';
-  // Add text node with input value
-  li.appendChild(document.createTextNode(newItem));
-  li.appendChild(document.createTextNode(" "+description));
+//   // Create new li element
+//   var li = document.createElement('li');
+//   // Add class
+//   li.className = 'list-group-item';
+//   // Add text node with input value
+//   li.appendChild(document.createTextNode(newItem));
+//   li.appendChild(document.createTextNode(" "+description));
 
-  // Create del button element
-  var deleteBtn = document.createElement('button');
-  // Add classes to del button
-  deleteBtn.className = 'btn btn-danger btn-sm float-right delete';
-  // Append text node
-  deleteBtn.appendChild(document.createTextNode('X'));
-  // Append button to li
-  li.appendChild(deleteBtn);
+//   // Create del button element
+//   var deleteBtn = document.createElement('button');
+//   // Add classes to del button
+//   deleteBtn.className = 'btn btn-danger btn-sm float-right delete';
+//   // Append text node
+//   deleteBtn.appendChild(document.createTextNode('X'));
+//   // Append button to li
+//   li.appendChild(deleteBtn);
 
-  const editbtn = document.createElement('button');
-  // add the class
-  editbtn.className = 'btn btn-sm float-right editBtn';
-  // append now 
-  editbtn.appendChild(document.createTextNode('EDIT'));
-  // now append to li
-  li.appendChild(editbtn);
+//   const editbtn = document.createElement('button');
+//   // add the class
+//   editbtn.className = 'btn btn-sm float-right editBtn';
+//   // append now 
+//   editbtn.appendChild(document.createTextNode('EDIT'));
+//   // now append to li
+//   li.appendChild(editbtn);
 
-  // Append li to list
-  itemList.appendChild(li);
-}
-
-
-
-// Remove item
+//   // Append li to list
+//   itemList.appendChild(li);
+// }
 
 
 
-// Filter Items
-function filterItems(e){
-  // convert text to lowercase
-  var text = e.target.value.toLowerCase();
-  // Get lis
-  var items = itemList.getElementsByTagName('li');
-  // Convert to an array
-  Array.from(items).forEach(function(item){
-    var itemName = item.firstChild.textContent;
-    var itemDesription = item.childNodes[1].textContent;
-    if(itemName.toLowerCase().indexOf(text) != -1 || itemDesription.toLowerCase().indexOf(text)!=-1){
-      item.style.display = 'block';
-    } else {
-      item.style.display = 'none';
-    }
-  });
-}
+// // Remove item
+
+
+
+// // Filter Items
+// function filterItems(e){
+//   // convert text to lowercase
+//   var text = e.target.value.toLowerCase();
+//   // Get lis
+//   var items = itemList.getElementsByTagName('li');
+//   // Convert to an array
+//   Array.from(items).forEach(function(item){
+//     var itemName = item.firstChild.textContent;
+//     var itemDesription = item.childNodes[1].textContent;
+//     if(itemName.toLowerCase().indexOf(text) != -1 || itemDesription.toLowerCase().indexOf(text)!=-1){
+//       item.style.display = 'block';
+//     } else {
+//       item.style.display = 'none';
+//     }
+//   });
+// }
 
 
 // console.log("object");
@@ -195,3 +195,17 @@ function filterItems(e){
 //     newLi.appendChild(document.createTextNode(newItem.value));
 //     itemList.appendChild(li);
 // }
+
+// let's talk about storage in browser
+// localStorage.setItem('name','Arvind');
+// console.log(localStorage.getItem('name'));
+// localStorage.removeItem('name');
+
+// sessionStorage.setItem('name','Arvind');
+// console.log(sessionStorage.getItem('name'));
+// sessionStorage.removeItem('name');
+
+// cokies
+document.cookie = 'name=Arvind; expires='+new Date(9999, 0, 1).toUTCString();
+document.cookie = 'Lastname=Thakur; expires='+new Date(9999, 0, 1).toUTCString();
+console.log(document.cookie);

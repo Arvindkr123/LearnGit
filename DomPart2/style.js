@@ -103,7 +103,7 @@ var form = document.getElementById('addForm');
 var itemList = document.getElementById('items');
 var filter = document.getElementById('filter');
 
-// Form submit event
+// // Form submit event
 form.addEventListener('submit', addItem);
 // Delete event
 itemList.addEventListener('click', removeItem);
@@ -182,10 +182,11 @@ function filterItems(e){
 //     // get input value
 //     var newItem = document.getElementById('item');
 //     // create new li
-//     var newLi = document.createElement('li').value;
+//     var newLi = document.createElement('li');
 //     // add class
 //     newLi.className = 'list-group-item';
+//     // console.log(newLi);
 //     // add text node with input value
-//     newLi.appendChild(document.createTextNode(newItem));
+//     newLi.appendChild(document.createTextNode(newItem.value));
 //     itemList.appendChild(li);
 // }

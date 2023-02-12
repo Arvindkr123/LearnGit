@@ -34,6 +34,20 @@ function showUserOnScreen(obj){
     }
     li.appendChild(deleteButton);
     parentElem.appendChild(li);
+
+    // first add the edit button
+    const editButton = document.createElement('input');
+    editButton.type='button';
+    editButton.value = 'Edit';
+    editButton.onclick=()=>{
+        localStorage.removeItem(obj.email);
+        parentElem.removeChild(li);
+        document.getElementById('name').value = obj.name;
+        document.getElementById('email').value = obj.email;
+        document.getElementById('tel').value = obj.phone;
+    }
+    li.appendChild(editButton);
+    parentElem.appendChild(li);
 }
 
 

@@ -1,3 +1,0 @@
-Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero earum quia impedit ex adipisci voluptate dolore voluptatem. Recusandae non, nobis commodi facilis nemo sunt aperiam officiis blanditiis, dolore ad vitae odio qui consequatur similique magni aliquam consectetur officia facere? Laboriosam tenetur vero repellendus reprehenderit nihil ut quisquam at, corrupti quo
-
-textContent gets the content of all elements, including <script> and <style> elements. In contrast, innerText only shows "human-readable" elements. textContent returns every element in the node. In contrast, innerText is aware of styling and won't return the text of "hidden" elements.

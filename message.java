@@ -386,35 +386,113 @@ import javax.swing.text.DefaultStyledDocument.ElementSpec;
 //     }
 // }
 
+// public class message{
+//     public static void main(String[] args) {
+//         int [] arr = {1,2,0};
+//         int ans = firstMissingPositive(arr);
+//         System.out.println(ans);
+//     }
+
+//     private static int firstMissingPositive(int[] arr) {
+//         int i=0;
+//         while(i<arr.length){
+//             int correct = arr[i]-1;
+//             if(arr[i]>0 && arr[i]<=arr.length && arr[i]!=arr[correct]){
+//                 swap(arr, i, correct);
+//             }else{
+//                 i++;
+//             }
+//         }
+
+//         //  case 2 
+//         for (int index = 0; index < arr.length; index++) {
+//              if(arr[index]!=index+1){
+//                 return index+1;
+//              }
+//         }
+//         return arr.length+1;
+//     }
+//     private static void swap(int[] arr, int i, int correct) {
+//         int temp =arr[i];
+//         arr[i]= arr[correct];
+//         arr[correct] = temp;
+//     }
+// }
+
+// bubble sort
+// public class message{
+//     public static void main(String[] args) {
+//         int [] arr ={4,3,2,5,1};
+//         System.out.println(Arrays.toString(arr));
+//         // sort(arr);
+//         // InsertionSort(arr);
+//         SelectionSort(arr);
+//         System.out.println(Arrays.toString(arr));
+//     }
+
+//     private static void SelectionSort(int[] arr) {
+//         for (int i = 0; i < arr.length; i++) {
+//             int min =i;
+//             for (int j = i+1; j < arr.length; j++) {
+//                 if(arr[min]>arr[j]){
+//                     min = j;
+//                 }
+//             }
+
+//             int temp = arr[min];
+//             arr[min] = arr[i];
+//             arr[i] = temp;
+//         }
+//     }
+
+//     private static void InsertionSort(int[] arr) {
+//         for (int i = 1; i < arr.length; i++) {
+//             for (int j = 0; j <=i; j++) {
+//                 if(arr[i]<arr[j]){
+//                     int temp = arr[i];
+//                     arr[i] = arr[j];
+//                     arr[j] = temp;
+//                 }
+//             }
+//         }
+//     }
+
+//     private static void sort(int[] arr) {
+//         for (int i = 0; i < arr.length; i++) {
+//             for (int j = 0; j < arr.length-i-1; j++) {
+//                 if(arr[j]>arr[j+1]){
+//                     int temp = arr[j];
+//                     arr[j] = arr[j+1];
+//                     arr[j+1] = temp;
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// Maximum Number of Words Found in Sentences
+// Input: sentences = ["alice and bob love leetcode", "i think so too", "this is great thanks very much"]
+// Output: 6
+// Explanation: 
+// - The first sentence, "alice and bob love leetcode", has 5 words in total.
+// - The second sentence, "i think so too", has 4 words in total.
+// - The third sentence, "this is great thanks very much", has 6 words in total.
+// Thus, the maximum number of words in a single sentence comes from the third sentence, which has 6 words.
+
 public class message{
     public static void main(String[] args) {
-        int [] arr = {1,2,0};
-        int ans = firstMissingPositive(arr);
-        System.out.println(ans);
+        String[] sentences = {"alice and bob love leetcode", "i think so too", "this is great thanks very much"};
+        System.out.println(mostWordsFound(sentences));
     }
 
-    private static int firstMissingPositive(int[] arr) {
-        int i=0;
-        while(i<arr.length){
-            int correct = arr[i]-1;
-            if(arr[i]>0 && arr[i]<=arr.length && arr[i]!=arr[correct]){
-                swap(arr, i, correct);
-            }else{
-                i++;
+    public static int mostWordsFound(String[] sentences) {
+        int max = sentences[0].split(" ").length;
+        for (int i = 0; i < sentences.length; i++) {
+            if(max<sentences[i].split(" ").length){
+                max = sentences[i].split(" ").length;
             }
         }
 
-        //  case 2 
-        for (int index = 0; index < arr.length; index++) {
-             if(arr[index]!=index+1){
-                return index+1;
-             }
-        }
-        return arr.length+1;
-    }
-    private static void swap(int[] arr, int i, int correct) {
-        int temp =arr[i];
-        arr[i]= arr[correct];
-        arr[correct] = temp;
+        return max;
     }
 }

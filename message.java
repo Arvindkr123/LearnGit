@@ -1,5 +1,6 @@
-import java.net.SocketTimeoutException;
-import java.util.Arrays;
+import java.util.*;
+
+import javax.swing.text.DefaultStyledDocument.ElementSpec;
 
 // Store the 20 prime number in the Array
 
@@ -177,28 +178,243 @@ import java.util.Arrays;
 //     }
 // }
 
+// public class message{
+//     public static void main(String[] args) {
+//         int [] arr ={4,3,2,7,8,2,3,1};
+//         System.out.println(Arrays.toString(arr));
+//         sort(arr);
+//         System.out.println(Arrays.toString(arr));
+//     }
+
+//     static void sort(int[] arr) {
+//         int i=0;
+//         while(i<arr.length){
+//             int correct = arr[i] -1;
+//             if(arr[i]!=arr[correct]){
+//                 swap(arr, i,correct);
+//             }else{
+//                 i++;
+//             }
+//         }
+//     }
+
+//     static void swap(int[] arr, int i, int correct) {
+//         int temp =arr[i];
+//         arr[i] = arr[correct];
+//         arr[correct] = temp;
+//     }
+// }
+
+// public class message{
+//         public static void main(String[] args) {
+//             // int [] arr ={4,3,2,7,8,2,3,1};
+//             int [] arr= {3,0,1};
+//             System.out.println(Arrays.toString(arr));
+//             int ans = missingNumber(arr);
+//             System.out.println(Arrays.toString(arr));
+//             System.out.println(ans);
+//         }
+
+//         private static int missingNumber(int[] arr) {
+//             int i=0;
+//             while(i<arr.length){
+//                 int correct = arr[i];
+//                 if(arr[i]<arr.length && arr[i]!=arr[correct]){
+//                     swap(arr, i, correct);
+//                 }else{
+//                     i++;
+//                 }
+//             }
+
+//             // case 2 
+//             for (int index = 0; index < arr.length; index++) {
+//                 if(arr[index]!=index){
+//                     return index;
+//                 }
+//             }
+//             return -1;
+//         }
+
+//         private static void swap(int[] arr, int i, int j) {
+//             int temp = arr[i];
+//             arr[i] = arr[j];
+//             arr[j] = temp;
+//         }
+// }
+
+// public class message{
+//     public static void main(String[] args) {
+//         int [] arr ={4,3,2,7,8,2,3,1};
+//         List<Integer> ans =findallMissingNumber(arr);
+//         System.out.println(ans);
+//     }
+
+//     private static List<Integer> findallMissingNumber(int[] arr) {
+//         int i=0;
+//         while(i<arr.length){
+//             int correct = arr[i]-1;
+//             if(arr[i]!=arr[correct]){
+//                 swap(arr, i, correct);
+//             }else{
+//                 i++;
+//             }
+//         }
+
+//         List<Integer> ans = new ArrayList<>();
+//         for (int index = 0; index < arr.length; index++) {
+//             if(arr[index]!=index+1){
+//                 ans.add(index+1);
+//             }
+//         }
+//         return ans;
+//     }
+
+//     private static void swap(int[] arr, int i, int correct) {
+//         int temp = arr[i];
+//         arr[i] = arr[correct];
+//         arr[correct] = temp;
+//     }
+// }
+
+// find the duplicate number
+// public class message{
+//     public static void main(String[] args) {
+//         int [] arr = {1,3,4,2,2};
+//         System.out.println(findDuplicate(arr));
+//     }
+
+//     private static int findDuplicate(int[] arr) {
+//         int i=0;
+//         while(i<arr.length){
+
+//             if(arr[i]!=i+1){
+//                 int correct = arr[i]-1;
+//                 if(arr[i]!=arr[correct]){
+//                     swap(arr, i, correct);
+//                 }else{
+//                     return arr[i];
+//                 }
+//             }else{
+//                 i++;
+//             }
+//         }
+//         return -1;
+//     }
+
+//     private static void swap(int[] arr, int i, int correct) {
+//         int temp = arr[i];
+//         arr[i] = arr[correct];
+//         arr[correct] =temp;
+//     }
+// }
+
+// find all duplicate number
+// public class message{
+//     public static void main(String[] args) {
+//         int [] arr ={4,3,2,7,8,2,3,1};
+//         List<Integer> ans = findAllDupicate(arr);
+//         System.out.println(ans);
+//     }
+
+//     private static List<Integer> findAllDupicate(int[] arr) {
+//         int i=0;
+//         while(i<arr.length){
+//             int correct = arr[i]-1;
+//             if(arr[i]!=arr[correct]){
+//                 swap(arr, i, correct);
+//             }else{
+//                 i++;
+//             }
+//         }
+        
+//         // case 2 find all duplicate
+//         List<Integer> ans = new ArrayList<>();
+//         for (int index = 0; index < arr.length; index++) {
+//             if(arr[index]!=index+1){
+//                 ans.add(arr[index]);
+//             }
+//         }
+        
+//         return ans;
+//     }
+
+//     private static void swap(int[] arr, int i, int correct) {
+//         int temp = arr[i];
+//         arr[i] = arr[correct];
+//         arr[correct] = temp;
+//     }
+// }
+
+/*\
+@ missing = index +1
+@ duplicate = missing
+ */
+
+// Set mismatch
+// public class message{
+//     public static void main(String[] args) {
+//         int [] arr ={1,2,2,4};
+//         int [] ans =findmistach(arr);
+//         System.out.println(Arrays.toString(ans));
+//     }
+
+//     private static int[] findmistach(int[] arr) {
+//         int i=0;
+//         while(i<arr.length){
+//             int correct = arr[i]-1;
+//             if(arr[i]!=arr[correct]){
+//                 swap(arr, i, correct);
+//             }else{
+//                 i++;
+//             }
+//         }
+
+//         // search for the first missing number
+//         for (int index = 0; index < arr.length; index++) {
+//             if(arr[index]!=index+1){
+//                 return new int[]{arr[index], index+1};
+//             }
+//         }
+
+//         return new int[]{-1, -1};
+//     }
+
+//     private static void swap(int[] arr, int i, int correct) {
+//         int temp =arr[i];
+//         arr[i]= arr[correct];
+//         arr[correct] = temp;
+//     }
+// }
+
 public class message{
     public static void main(String[] args) {
-        int [] arr ={4,3,2,7,8,2,3,1};
-        sort(arr);
-        System.out.println(Arrays.toString(arr));
+        int [] arr = {1,2,0};
+        int ans = firstMissingPositive(arr);
+        System.out.println(ans);
     }
 
-     static void sort(int[] arr) {
+    private static int firstMissingPositive(int[] arr) {
         int i=0;
         while(i<arr.length){
-            int correct = arr[i] -1;
-            if(arr[i]!=correct){
-                swap(arr, i,correct);
+            int correct = arr[i]-1;
+            if(arr[i]>0 && arr[i]<=arr.length && arr[i]!=arr[correct]){
+                swap(arr, i, correct);
             }else{
                 i++;
             }
         }
-    }
 
-     static void swap(int[] arr, int i, int correct) {
+        //  case 2 
+        for (int index = 0; index < arr.length; index++) {
+             if(arr[index]!=index+1){
+                return index+1;
+             }
+        }
+        return arr.length+1;
+    }
+    private static void swap(int[] arr, int i, int correct) {
         int temp =arr[i];
-        arr[i] = arr[correct];
+        arr[i]= arr[correct];
         arr[correct] = temp;
     }
 }

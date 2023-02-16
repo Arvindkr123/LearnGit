@@ -1,5 +1,6 @@
 import java.util.*;
 
+import javax.swing.text.WrappedPlainView;
 import javax.swing.text.DefaultStyledDocument.ElementSpec;
 
 // Store the 20 prime number in the Array
@@ -480,19 +481,73 @@ import javax.swing.text.DefaultStyledDocument.ElementSpec;
 // Thus, the maximum number of words in a single sentence comes from the third sentence, which has 6 words.
 
 public class message{
+    // public static void main(String[] args) {
+        // String[] sentences = {"alice and bob love leetcode", "i think so too", "this is great thanks very much"};
+        // System.out.println(mostWordsFound(sentences));
+        // int n = 82;
+        // int [] arr = new int[n];
+        // int count=0;
+        // for(int i=5; i<82 && count<n; i++){
+        //     int sum=0;
+        //     while(i>0){
+        //         int rem = i%10;
+        //         sum+=rem;
+        //         i/=10;
+        //     }
+        //     if(sum%5==0){
+
+        //         arr[count] = i;
+        //         count++;
+        //     }
+
+        // }
+        // System.out.println(Arrays.toString(arr));
+    // }
+
+    // public static int mostWordsFound(String[] sentences) {
+    //     int max = sentences[0].split(" ").length;
+    //     for (int i = 0; i < sentences.length; i++) {
+    //         if(max<sentences[i].split(" ").length){
+    //             max = sentences[i].split(" ").length;
+    //         }
+    //     }
+
+    //     return max;
+    // }
+
     public static void main(String[] args) {
-        String[] sentences = {"alice and bob love leetcode", "i think so too", "this is great thanks very much"};
-        System.out.println(mostWordsFound(sentences));
+        System.out.println(reverse1("I am good"));
     }
 
-    public static int mostWordsFound(String[] sentences) {
-        int max = sentences[0].split(" ").length;
-        for (int i = 0; i < sentences.length; i++) {
-            if(max<sentences[i].split(" ").length){
-                max = sentences[i].split(" ").length;
+    public static String reverse1(String s) {
+        String [] words = s.split(" ");
+        System.out.println(Arrays.toString(words));
+        String rev ="";
+        for (int i = 0; i < words.length; i++) {
+            rev = words[i]+" "+rev;
+        }
+        return rev;
+    }
+    public static String reverse(String s) {
+        // find the whitespaces
+        int x = s.indexOf(" ");
+        if(x==-1){
+            return s;
+        }
+
+        return reverse(s.substring(x+1)+" "+s.substring(0,x));
+    }
+    public static int[][] count(int[][] arr1,int[][] arr2) {
+        int n = arr1.length;
+        int m = arr1[0].length;
+        int ans[][] = new int[n][m];
+
+        for(int i=0; i<n; i++){
+            for (int j = 0; j <m; j++) {
+                ans[i][j] = arr1[i][j] + arr2[i][j];
             }
         }
 
-        return max;
+        return ans;
     }
 }
